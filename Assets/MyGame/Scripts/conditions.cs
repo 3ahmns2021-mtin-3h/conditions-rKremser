@@ -6,8 +6,9 @@ public class conditions : MonoBehaviour
 {
 
 
-    public bool space3Seconds = false;
-    public bool buttonPressed = false;
+    public bool A = false;
+    public bool B = false;
+    public bool C = false;
 
     public GameObject image;
 
@@ -22,7 +23,7 @@ public class conditions : MonoBehaviour
             if (time > 3)
             {
                 Debug.Log("Space Pressed " + time);
-                space3Seconds = true;
+                A = true;
             }
         }
 
@@ -40,8 +41,17 @@ public class conditions : MonoBehaviour
     {
         Debug.Log("Button Pressed");
 
-        buttonPressed = true;
+        B = true;
 
         image.SetActive(false);
+
+        C = true;
     }
+
+    public void check()
+    {
+        Debug.Log("check: " + (A && B && C));
+    }
+
+    
 }
